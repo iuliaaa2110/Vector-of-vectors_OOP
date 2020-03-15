@@ -273,13 +273,13 @@ int main()
 
 
 ///3.AFISARE (SUPRAINCARCAREA LUI << )
-    cout<<'\n'<<"AFISARE:"<<'\n'<<ob2<<'\n'<<'\n'<<ob1;//se afiseaza doar ob1.m si ob2.m, adica vectorii de vectori, nu si dimensiunile lor
+    cout<<'\n'<<"AFISARE:"<<'\n'<<ob2<<'\n'<<'\n'<<ob1;
 
 
 
 ///4.METODA DE TRANSFORMARE IN MATRICE
     cout<<'\n'<<"TRANSFORMAREA OBIECTULUI IN MATRICE:"<<endl;
-    int **a=ob2.matrice(); //am pus afisarea in metoda, pentru verificare
+    int **a=ob2.matrice(); 
 
 
 ///5.METODA DE ADUNARE A DOUA OBIECTE SI FURNIZAREA REZULTATULUI PRINTR-O MATRICE NORMALA
