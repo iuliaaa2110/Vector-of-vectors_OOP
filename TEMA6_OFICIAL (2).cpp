@@ -230,8 +230,6 @@ int** &operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunare
     return a;
 }
 
-
-
 vectori_de_vectori::~vectori_de_vectori()                              ///destructor
 {
     dim=0;
