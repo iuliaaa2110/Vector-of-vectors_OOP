@@ -7,11 +7,13 @@ class vector
     int *v;
 public:
     friend class vectori_de_vectori;
+    
     vector()        ///constructori de initializare
     {
         nv = 0;
         v = NULL;
     }
+    
     vector(int n, int *w)
     {
         nv=n;
@@ -229,8 +231,6 @@ int** &operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunare
     }
     return a;
 }
-
-
 
 vectori_de_vectori::~vectori_de_vectori()                              ///destructor
 {
