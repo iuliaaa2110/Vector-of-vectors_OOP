@@ -34,9 +34,6 @@ class vector{
         public: int* vector_simplu(int l);
 };
 
-
-
-
 istream &operator >> ( istream &i,vector &ob)   /// >>
 {
     cout<<"m=";
