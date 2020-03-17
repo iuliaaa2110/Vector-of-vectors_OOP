@@ -7,11 +7,13 @@ class vector
     int *v;
 public:
     friend class vectori_de_vectori;
+    
     vector()        ///constructori de initializare
     {
         nv = 0;
         v = NULL;
     }
+    
     vector(int n, int *w)
     {
         nv=n;
@@ -35,6 +37,7 @@ public:
         for(int i=1; i<=nv; i++)
             v[i]=ob.v[i];
     }
+    
     ~vector()    ///destructor
     {
         nv=0;
