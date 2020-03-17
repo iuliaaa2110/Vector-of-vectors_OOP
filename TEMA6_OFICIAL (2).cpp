@@ -107,7 +107,7 @@ class vectori_de_vectori
 public:
 
     //supraincarcarea operatorilor:
-
+    
     friend istream &operator >> (istream &i, vectori_de_vectori &ob);
     friend ostream &operator << (ostream &o, vectori_de_vectori &ob);
     friend int** &operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2);
@@ -117,6 +117,7 @@ public:
     {
         dim=1;
     }
+    
     vectori_de_vectori(int n,int *c,int nr); ///initializare cu un nr pe n linii
     vectori_de_vectori(const vectori_de_vectori &ob);///copiere
     ~vectori_de_vectori(); ///destructor
@@ -267,3 +268,4 @@ int main()
     int **b=ob1+ob2;
 
     return 0;
+}
