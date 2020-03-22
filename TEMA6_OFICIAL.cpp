@@ -37,6 +37,7 @@ public:
         for(int i=1; i<=nv; i++)
             v[i]=ob.v[i];
     }
+    
     ~vector()    ///destructor
     {
         nv=0;
