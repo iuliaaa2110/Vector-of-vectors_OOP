@@ -7,13 +7,13 @@ class vector
     int *v;
 public:
     friend class vectori_de_vectori;
-    
+
     vector()        ///constructori de initializare
     {
         nv = 0;
         v = NULL;
     }
-    
+
     vector(int n, int *w)
     {
         nv=n;
@@ -37,16 +37,23 @@ public:
         for(int i=1; i<=nv; i++)
             v[i]=ob.v[i];
     }
-    
+
     ~vector()    ///destructor
     {
         nv=0;
         delete[] v;
     }
 
+    vector& operator = (vector &ob2)
+    {
+        this->nv=ob2.nv;
+        for(int i;i<=this->nv;i++)
+            this->v[i]=ob2.v[i];
+    }
+
     friend vector operator + (vector &ob1,vector &ob2);
-    friend istream &operator >> (istream &i, vector &ob);
-    friend ostream &operator << (ostream &o, vector &ob);
+    friend istream& operator >> (istream &i, vector &ob);
+    friend ostream& operator << (ostream &o, vector &ob);
     int lungime();
     int* vector_simplu(int l);
 };
