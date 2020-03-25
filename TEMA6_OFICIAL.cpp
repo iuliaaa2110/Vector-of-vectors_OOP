@@ -45,10 +45,36 @@ public:
     }
 
     vector& operator = (vector &ob2)
-    {
-        this->nv=ob2.nv;
-        for(int i;i<=this->nv;i++)
-            this->v[i]=ob2.v[i];
+    {int i,ok=1;
+        if(this==&ob2)
+                return *this;
+        if(this->nv==ob2.nv)
+        {
+            this->nv=ob2.nv;
+            for(i=1;i<=this->nv;i++)
+                this->v[i]=ob2.v[i];
+            return *this;
+        }
+        else if(this->nv>ob2.nv)
+        {
+            int *w=new int[ob2.nv];
+            for(i=1;i<=this->nv;i++)
+                    w[i]=ob2.v[i];
+            delete this->v;
+            this->v=w;
+            this->nv=ob2.nv;
+            return *this;
+        }
+        else    //<
+        {
+            int *w=new int[ob2.nv];
+            for(i=1;i<=ob2.nv;i++)
+                w[i]=ob2.v[i];
+            delete this->v;
+            this->v=w;
+            this->nv=ob2.nv;
+            return *this;
+        }
     }
 
     friend vector operator + (vector &ob1,vector &ob2);
