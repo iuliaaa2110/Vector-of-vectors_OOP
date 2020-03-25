@@ -45,7 +45,8 @@ public:
     }
 
     vector& operator = (vector &ob2)
-    {int i,ok=1;
+    {
+        int i,ok=1;
         if(this==&ob2)
                 return *this;
         if(this->nv==ob2.nv)
