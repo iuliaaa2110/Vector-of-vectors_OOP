@@ -287,7 +287,10 @@ int main()
             cout<<a[i][j]<<" ";
         cout<<'\n';
     }
-    delete 1;
+    
+    for(int i=1;i<=ob2.i_max(ob2)+1;i++)
+        delete[] a[i];
+    delete []a;
    
 ///5.metoda de adunare a doua obiecte
     cout<<'\n'<<"Adunarea celor doua matrice:"<<endl;
@@ -298,7 +301,9 @@ int main()
             cout<<b[i][j]<<" ";
         cout<<'\n';
     }
-    delete b;
+    for(int i=1;i<=ob1.i_max(ob2);i++)
+        delete[] b[i];
+    delete []b;
     
     return 0;
 }
