@@ -46,7 +46,7 @@ public:
 
     vector& operator = (vector &ob2)
     {
-        int i,ok=1;
+        int i;
         if(this==&ob2)
                 return *this;
         if(this->nv==ob2.nv)
@@ -287,7 +287,8 @@ int main()
             cout<<a[i][j]<<" ";
         cout<<'\n';
     }
-
+    delete 1;
+   
 ///5.metoda de adunare a doua obiecte
     cout<<'\n'<<"Adunarea celor doua matrice:"<<endl;
     int **b=ob1+ob2;
@@ -297,6 +298,7 @@ int main()
             cout<<b[i][j]<<" ";
         cout<<'\n';
     }
+    delete b;
+    
     return 0;
-
 }
