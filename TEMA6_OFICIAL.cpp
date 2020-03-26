@@ -144,7 +144,7 @@ public:
 
     friend istream &operator >> (istream &i, vectori_de_vectori &ob);
     friend ostream &operator << (ostream &o, vectori_de_vectori &ob);
-    friend int** &operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2);
+    friend int** operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2);
 
     //metode:
     vectori_de_vectori() ///constructor de initializare basic
@@ -245,7 +245,7 @@ int** vectori_de_vectori::matrice()         ///transform un vector de vectori in
     return a;
 }
 
-int** &operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunarea intre 2 vectori de vectori, returnez o matrice.
+int** operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunarea intre 2 vectori de vectori, returnez o matrice.
 {
     int imax=ob1.i_max(ob2);
     int jmax=ob1.j_max(ob2);
