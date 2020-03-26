@@ -61,7 +61,7 @@ public:
             int *w=new int[ob2.nv];
             for(i=1;i<=this->nv;i++)
                     w[i]=ob2.v[i];
-            delete this->v;
+            delete[] this->v;
             this->v=w;
             this->nv=ob2.nv;
             return *this;
@@ -71,7 +71,7 @@ public:
             int *w=new int[ob2.nv];
             for(i=1;i<=ob2.nv;i++)
                 w[i]=ob2.v[i];
-            delete this->v;
+            delete[] this->v;
             this->v=w;
             this->nv=ob2.nv;
             return *this;
