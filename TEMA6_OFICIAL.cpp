@@ -235,13 +235,7 @@ int** vectori_de_vectori::matrice()         ///transform un vector de vectori in
     int** a=new int*[this->dim+1];
     int jmax=this->j_max(*this);
     for(int i=1; i<=dim; i++)
-    {
         a[i]=this->m[i].vector_simplu(jmax);
-
-        for(int j=1; j<=jmax; j++)  //verificare
-            cout<<a[i][j]<<" ";
-        cout<<'\n';
-    }
     return a;
 }
 
@@ -249,7 +243,6 @@ int** operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunarea
 {
     int imax=ob1.i_max(ob2);
     int jmax=ob1.j_max(ob2);
-    cout<<imax<<" "<<jmax<<endl;
     int** a=new int*[imax+1];
     for(int i=1; i<=imax; i++)
     {
@@ -259,10 +252,6 @@ int** operator + (vectori_de_vectori &ob1,vectori_de_vectori &ob2)   ///adunarea
             a[i]=(ob1.m[i]).vector_simplu(jmax);
         else
             a[i]=(ob1.m[i]+ob2.m[i]).vector_simplu(jmax);
-
-        for(int j=1; j<=jmax; j++) //verificare
-            cout<<a[i][j]<<" ";
-        cout<<endl;
     }
     return a;
 }
@@ -278,28 +267,39 @@ int main()
 
 ///1.citire (supraincarcarea lui >>)
     vectori_de_vectori ob2;
-    cout<<'\n'<<'\n'<<"CITIRE:"<<'\n';
+    cout<<'\n'<<'\n'<<"Citire:"<<'\n';
     cin>>ob2; //se vor citi: n=numarul de linii (numarul de vectori din vector)
     //apoi de n ori cate un m si apoi cele m numere pentru linia i. (1<=i<=n)
     cout<<'\n'<<"Obiectul citit este:"<<'\n'<<ob2<<'\n'<<'\n';//verificare
 
 ///2.declarare:
     int v[8]= {0,1,2,3,4,5,6,7}; //v[i]=numarul de componente pentru al i-lea vector din matrice
-    cout<<"DECLARARE:"<<endl;
+    cout<<"Declarare:"<<endl;
     vectori_de_vectori ob1(5,v,3);
     cout<<ob1;
 
 ///3.afisare (supraincarcarea lui << )
-    cout<<'\n'<<"AFISARE:"<<'\n'<<ob2<<'\n'<<'\n'<<ob1;//se afiseaza doar ob1.m si ob2.m, adica vectorii de vectori, nu si dimensiunile lor
+    cout<<'\n'<<"Afisare:"<<'\n'<<ob2<<'\n'<<'\n'<<ob1;//se afiseaza doar ob1.m si ob2.m, adica vectorii de vectori, nu si dimensiunile lor
 
 ///4.metoda de transformare in matrice
-    cout<<'\n'<<"TRANSFORMAREA OBIECTULUI IN MATRICE:"<<endl;
-    int **a=ob2.matrice(); //am pus afisarea in metoda, pentru verificare
+    cout<<'\n'<<"Transformarea obiectului in matrice:"<<endl;
+    int **a=ob2.matrice();
+    for(int i=1;i<=ob2.i_max(ob2);i++)
+    {
+        for(int j=1;j<=ob2.j_max(ob2);j++)
+            cout<<a[i][j]<<" ";
+        cout<<'\n';
+    }
 
 ///5.metoda de adunare a doua obiecte
-    cout<<'\n'<<"ADUNAREA CELOR DOUA MATRICE:"<<endl;
+    cout<<'\n'<<"Adunarea celor doua matrice:"<<endl;
     int **b=ob1+ob2;
-
+    for(int i=1;i<=ob1.i_max(ob2);i++)
+    {
+        for(int j=1;j<=ob1.j_max(ob2);j++)
+            cout<<b[i][j]<<" ";
+        cout<<'\n';
+    }
     return 0;
 
 }
