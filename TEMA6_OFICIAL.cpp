@@ -288,7 +288,7 @@ int main()
         cout<<'\n';
     }
     
-    for(int i=1;i<=ob2.i_max(ob2)+1;i++)
+    for(int i=1;i<=ob2.i_max(ob2);i++)
         delete[] a[i];
     delete []a;
    
