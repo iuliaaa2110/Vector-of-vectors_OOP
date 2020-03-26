@@ -200,10 +200,7 @@ ostream &operator << (ostream &o, vectori_de_vectori &ob)              ///<<
 {
     o<<ob.dim<<'\n';
     for(int i=1; i<=ob.dim; i++)
-    {
-        // cout<<ob.m[i]<<" ";
         o<<ob.m[i]<<'\n';
-    }
     return o;
 }
 
